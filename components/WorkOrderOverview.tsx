@@ -54,11 +54,11 @@ export function WorkOrderOverview() {
               <span className="text-red-600">›</span>
             </div>
             <div className="flex items-center justify-between bg-white p-3 rounded-lg cursor-pointer hover:bg-red-50 transition-colors">
-              <span>张三今日已有5个工单指令超时，可能需要工作量调整（规则：设当日总指令数为N，未完成或超时指令数为U；当N≤5时，若U≥1则预警；当N>5时，若U/N>50%则预警）</span>
+              <span>张三今日已有5个工单指令超时，可能需要工作量调整（规则：设当日总指令数为N，未完成或超时指令数为U；当N≤5时，若U≥1则预警；当N{'>'}5时，若U/N{'>'}50%则预警）</span>
               <span className="text-red-600">›</span>
             </div>
             <div className="flex items-center justify-between bg-white p-3 rounded-lg cursor-pointer hover:bg-red-50 transition-colors">
-              <span>李四今日有3个工单指令未完成，建议关注（规则：设当日总指令数为N，未完成或超时指令数为U；当N≤5时，若U≥1则预警；当N>5时，若U/N>50%则预警）</span>
+              <span>李四今日有3个工单指令未完成，建议关注（规则：设当日总指令数为N，未完成或超时指令数为U；当N≤5时，若U≥1则预警；当N{'>'}5时，若U/N{'>'}50%则预警）</span>
               <span className="text-red-600">›</span>
             </div>
             <div className="flex items-center justify-between bg-white p-3 rounded-lg cursor-pointer hover:bg-red-50 transition-colors">
