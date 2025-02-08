@@ -14,11 +14,11 @@ const data = [
   { name: "钱七", normal: 42, overtime: 8, incomplete: 3 },
 ]
 
-const AbnormalOrderDetails = ({ employee }) => {
+const AbnormalOrderDetails = ({ employee }: { employee: string }) => {
   const abnormalOrders = [
-    { id: 1, type: "超时", description: "客房清洁超时30分钟", time: "2023-05-15 10:30" },
-    { id: 2, type: "未完成", description: "健身房设备维护未完成", time: "2023-05-16 14:45" },
-    { id: 3, type: "超时", description: "餐厅订单处理超时15分钟", time: "2023-05-17 12:20" },
+    { id: 1, type: "超时", description: `${employee}：客房清洁超时30分钟`, time: "2023-05-15 10:30" },
+    { id: 2, type: "未完成", description: `${employee}：健身房设备维护未完成`, time: "2023-05-16 14:45" },
+    { id: 3, type: "超时", description: `${employee}：餐厅订单处理超时15分钟`, time: "2023-05-17 12:20" },
   ]
 
   if (!abnormalOrders || abnormalOrders.length === 0) {

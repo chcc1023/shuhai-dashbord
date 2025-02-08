@@ -6,34 +6,40 @@ import { ResponsivePie } from "@nivo/pie"
 
 const data = [
   {
+    id: "正常完成",
+    label: "正常完成",
+    value: 50,
+    color: colors.chart.green,
+  },
+  {
     id: "超时完成",
     label: "超时完成",
     value: 35,
-    color: colors.orange.primary,
+    color: colors.chart.orange,
   },
   {
     id: "质量不达标",
     label: "质量不达标",
-    value: 25,
-    color: colors.red.primary,
+    value: 15,
+    color: colors.chart.red,
   },
   {
     id: "执行偏差",
     label: "执行偏差",
     value: 20,
-    color: colors.blue.primary,
+    color: colors.chart.blue,
   },
   {
     id: "资源冲突",
     label: "资源冲突",
     value: 15,
-    color: colors.gray.primary,
+    color: colors.neutral[500],
   },
   {
     id: "其他异常",
     label: "其他异常",
     value: 5,
-    color: colors.green.primary,
+    color: colors.chart.green,
   },
 ]
 
