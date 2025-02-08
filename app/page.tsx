@@ -91,10 +91,6 @@ export default function Dashboard() {
             <EmployeePerformance />
           </ErrorBoundary>
         </div>
-
-        {/* <ErrorBoundary FallbackComponent={ErrorFallback}>
-          <WorkOrderNetwork />
-        </ErrorBoundary> */}
       </div>
     </div>
   )
