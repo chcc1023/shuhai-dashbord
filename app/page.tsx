@@ -6,10 +6,10 @@ import { QualityControl } from "@/components/QualityControl"
 import { Button } from "@/components/ui/button"
 import { WorkOrderOverview } from "@/components/WorkOrderOverview"
 import { useEffect, useState } from "react"
-import { ErrorBoundary } from "react-error-boundary"
+import { ErrorBoundary, FallbackProps } from "react-error-boundary"
 import { HelpCircle } from "lucide-react"
 
-function ErrorFallback({ error, resetErrorBoundary }) {
+function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
   return (
     <div role="alert" className="p-4 bg-red-50 border border-red-200 rounded-lg">
       <p className="font-semibold text-red-800">出现错误：</p>
