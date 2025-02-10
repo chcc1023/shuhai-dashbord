@@ -53,7 +53,7 @@ export default function Dashboard() {
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold">工单与质检数据分析仪表板</h1>
         <div className="text-sm text-gray-500 flex items-center gap-2">
-          <span>最后更新时间: {lastUpdated.toLocaleString()}</span>
+          <span>数据更新时间: {lastUpdated.toLocaleString()}</span>
           <div className="relative group">
             <HelpCircle className="h-4 w-4 text-gray-400 cursor-help" />
             <div className="hidden group-hover:block absolute top-full right-1/2 translate-x-1/2 mt-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg whitespace-nowrap z-10">

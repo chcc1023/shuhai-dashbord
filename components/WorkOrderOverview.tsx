@@ -130,7 +130,7 @@ export function WorkOrderOverview() {
               <div className="relative group">
                 <span className="cursor-help text-gray-400 text-sm">?</span>
                 <div className="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg whitespace-nowrap">
-                  与昨日数据对比的变化趋势
+                  与昨日数据对比的变化趋势（统计每日作业工单完成时间）
                 </div>
               </div>
             </div>
@@ -144,7 +144,7 @@ export function WorkOrderOverview() {
 
         <div className="grid grid-cols-2 gap-6">
           <div className="bg-white p-4 rounded-lg border border-gray-200">
-            <h3 className="text-lg font-semibold mb-4 text-gray-800">工单健康度</h3>
+            <h3 className="text-lg font-semibold mb-4 text-gray-800">工单完成健康度</h3>
             <ResponsiveContainer width="100%" height={280}>
               <PieChart margin={{ top: 0, right: 0, bottom: 30, left: 0 }}>
                 <Pie
@@ -274,19 +274,19 @@ export function WorkOrderOverview() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               <div>
                 <h4 className="text-sm font-medium mb-3 text-center text-gray-700">工单数量分布</h4>
-                <div className="h-[300px] w-full">
+                <div className="h-[350px] w-full">
                   <HeatMap data={generateHeatMapData('workload')} type="workload" />
                 </div>
               </div>
               <div>
                 <h4 className="text-sm font-medium mb-3 text-center text-gray-700">完成率分布</h4>
-                <div className="h-[300px] w-full">
+                <div className="h-[350px] w-full">
                   <HeatMap data={generateHeatMapData('completion')} type="completion" />
                 </div>
               </div>
               <div>
                 <h4 className="text-sm font-medium mb-3 text-center text-gray-700">合格率分布</h4>
-                <div className="h-[300px] w-full">
+                <div className="h-[350px] w-full">
                   <HeatMap data={generateHeatMapData('qualified')} type="qualified" />
                 </div>
               </div>

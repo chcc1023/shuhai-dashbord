@@ -55,12 +55,12 @@ export function HeatMap({ data, type }: HeatMapProps) {
   return (
     <ResponsiveHeatMap
       data={data}
-      margin={{ top: 20, right: 20, bottom: 40, left: 60 }}
+      margin={{ top: 40, right: 20, bottom: 40, left: 60 }}
       valueFormat={config.valueFormat}
       axisTop={{
         tickSize: 5,
         tickPadding: 5,
-        tickRotation: -45,
+        tickRotation: -30,
         legend: "",
         legendOffset: 46
       }}

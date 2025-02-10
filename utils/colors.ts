@@ -1,42 +1,43 @@
 export const colors = {
   primary: {
-    light: '#e6f1fe',
-    default: '#2563eb',
-    dark: '#1e40af',
+    light: "#e6f7ff",
+    default: "#1890ff",
+    dark: "#096dd9"
   },
   success: {
-    light: '#dcfce7',
-    default: '#16a34a',
-    dark: '#166534',
+    light: "#f6ffed",
+    default: "#52c41a",
+    dark: "#389e0d"
   },
   warning: {
-    light: '#ffedd5',
-    default: '#ea580c',
-    dark: '#9a3412',
+    light: "#fffbe6",
+    default: "#faad14",
+    dark: "#d48806"
   },
   danger: {
-    light: '#fee2e2',
-    default: '#dc2626',
-    dark: '#991b1b',
+    light: "#fff1f0",
+    default: "#ff4d4f",
+    dark: "#cf1322"
   },
   neutral: {
-    100: '#f3f4f6',
-    200: '#e5e7eb',
-    300: '#d1d5db',
-    400: '#9ca3af',
-    500: '#6b7280',
-    600: '#4b5563',
-    700: '#374151',
-    800: '#1f2937',
-    900: '#111827',
+    50: "#fafafa",
+    100: "#f5f5f5",
+    200: "#e5e5e5",
+    300: "#d4d4d4",
+    400: "#a3a3a3",
+    500: "#737373",
+    600: "#525252",
+    700: "#404040",
+    800: "#262626",
+    900: "#171717"
   },
   chart: {
-    blue: '#2563eb',
-    green: '#16a34a',
-    orange: '#ea580c',
-    red: '#dc2626',
-    purple: '#9333ea',
-    gray: '#6b7280',
+    blue: "#1890ff",
+    green: "#52c41a",
+    yellow: "#faad14",
+    red: "#ff4d4f",
+    purple: "#722ed1",
+    orange: "#fa8c16"
   }
 }
 

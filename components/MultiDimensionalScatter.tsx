@@ -2,15 +2,15 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { colors } from "@/utils/colors"
-import { ResponsiveContainer, Scatter, ScatterChart, Tooltip, XAxis, YAxis, ZAxis } from "recharts"
+import { ResponsiveContainer, Scatter, ScatterChart, Tooltip, XAxis, YAxis } from "recharts"
 
 const data = [
-  { x: 45, y: 92, z: 200, location: "前广场外围" },
-  { x: 45, y: 92, z: 260, location: "商铺" },
-  { x: 45, y: 92, z: 400, location: "商铺1楼" },
-  { x: 41, y: 88, z: 280, location: "商铺2楼" },
-  { x: 41, y: 88, z: 500, location: "1栋写字楼" },
-  { x: 41, y: 88, z: 200, location: "负一层" }
+  { x: 45, y: 92, location: "前广场外围" },
+  { x: 45, y: 92, location: "商铺" },
+  { x: 45, y: 92, location: "商铺1楼" },
+  { x: 41, y: 88, location: "商铺2楼" },
+  { x: 41, y: 88, location: "1栋写字楼" },
+  { x: 41, y: 88, location: "负一层" }
 ]
 
 const locationColors = {
@@ -58,18 +58,10 @@ export function MultiDimensionalScatter() {
                 domain={[80, 100]}
                 label={{ value: '工单合格率（%）', angle: -90, position: 'left' }} 
               />
-              <ZAxis 
-                type="number" 
-                dataKey="z" 
-                range={[60, 400]} 
-                name="员工效率" 
-                unit="分/小时" 
-              />
               <Tooltip 
                 cursor={{ strokeDasharray: "3 3" }}
                 content={({ active, payload }) => {
                   if (active && payload && payload.length) {
-                    // 找到所有相同坐标的点
                     const x = payload[0].payload.x;
                     const y = payload[0].payload.y;
                     const overlappingPoints = data.filter(item => item.x === x && item.y === y);
@@ -81,7 +73,6 @@ export function MultiDimensionalScatter() {
                             <p className="font-bold">{point.location}</p>
                             <p>工单数量: {point.x}个</p>
                             <p>合格率: {point.y}%</p>
-                            <p>作业效率: {point.z}小时</p>
                             {index < overlappingPoints.length - 1 && <hr className="my-2" />}
                           </div>
                         ))}
@@ -97,10 +88,18 @@ export function MultiDimensionalScatter() {
                   name={location} 
                   data={data.filter(item => item.location === location)} 
                   fill={color}
-                  shape="circle"
-                  r={8}  // 基础半径
+                  shape={(props) => {
+                    const { cx, cy } = props;
+                    return (
+                      <circle 
+                        cx={cx} 
+                        cy={cy} 
+                        r={12}  // 从 20 改为 12，调整为适中大小
+                        fill={color}
+                      />
+                    );
+                  }}
                   onClick={(data) => {
-                    // 添加点击事件处理
                     console.log(data);
                   }}
                 />
@@ -111,7 +110,6 @@ export function MultiDimensionalScatter() {
         <div className="mt-4 text-sm text-gray-500">
           <p>• 横轴表示工单数量</p>
           <p>• 纵轴表示工单合格率</p>
-          <p>• 气泡大小表示作业效率</p>
           <div className="flex gap-4 mt-2">
             {Object.entries(locationColors).map(([location, color]) => (
               <div key={location} className="flex items-center gap-2">

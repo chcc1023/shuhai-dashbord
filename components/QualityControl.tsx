@@ -87,7 +87,7 @@ export function QualityControl() {
           </div>
         </div>
         <div className="mt-8">
-          <h3 className="text-lg font-semibold mb-4">高频问题追踪墙（近30天）</h3>
+          <h3 className="text-lg font-semibold mb-4">高频问题追踪墙（近30天）（显示规则：同一个空间、设施设备发现相同缺陷超过2次即显示，当前页展示最高发生次数的前10条）</h3>
           <Table>
             <TableHeader>
               <TableRow>
@@ -113,7 +113,7 @@ export function QualityControl() {
           <div className="mt-10 text-sm text-gray-500">
             <p>• 展示近30天内频繁出现的缺陷</p>
             <p>• 帮助识别重点改进区域和设施设备</p>
-            <p>• 追踪问题处理责任人</p>
+            <p>• 追踪问题对应责任人</p>
           </div>
         </div>
       </CardContent>

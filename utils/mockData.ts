@@ -1,6 +1,16 @@
 export function generateTimeSeriesData(days: number) {
   const data = []
   const today = new Date()
+  
+  // 使用固定的种子数据
+  const seedData = {
+    normal: [75, 82, 78, 85, 80, 77, 83, 79, 81, 84, 76, 82, 85, 79, 83,
+             80, 78, 84, 77, 81, 83, 76, 85, 79, 82, 80, 78, 83, 81, 84],
+    overtime: [8, 6, 9, 7, 10, 8, 5, 11, 7, 6, 9, 8, 6, 10, 7,
+               9, 8, 6, 11, 7, 8, 10, 5, 9, 7, 8, 11, 6, 9, 7],
+    unqualified: [5, 4, 6, 3, 5, 7, 4, 5, 6, 4, 7, 3, 5, 4, 6,
+                  5, 7, 3, 5, 6, 4, 7, 3, 5, 6, 4, 5, 7, 4, 6]
+  }
 
   for (let i = days - 1; i >= 0; i--) {
     const date = new Date(today)
@@ -8,9 +18,9 @@ export function generateTimeSeriesData(days: number) {
 
     data.push({
       date: date.toISOString().split('T')[0],
-      normalOrders: Math.floor(Math.random() * 50) + 50,     // 50-100 正常工单
-      overtimeOrders: Math.floor(Math.random() * 10) + 3,    // 3-13 超时工单
-      unqualifiedOrders: Math.floor(Math.random() * 15) + 5, // 5-20 未完成工单
+      normalOrders: seedData.normal[days - 1 - i],     // 使用固定数据
+      overtimeOrders: seedData.overtime[days - 1 - i], // 使用固定数据
+      unqualifiedOrders: seedData.unqualified[days - 1 - i] // 使用固定数据
     })
   }
 
