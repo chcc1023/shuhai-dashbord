@@ -13,41 +13,41 @@ const data = [
   { name: "钱七", normal: 42, overtime: 8, incomplete: 3 },
 ]
 
-const AbnormalOrderDetails = ({ employee }: { employee: string }) => {
-  const abnormalOrders = [
-    { id: 1, type: "超时", description: `${employee}：客房清洁超时30分钟`, time: "2023-05-15 10:30" },
-    { id: 2, type: "未完成", description: `${employee}：健身房设备维护未完成`, time: "2023-05-16 14:45" },
-    { id: 3, type: "超时", description: `${employee}：餐厅订单处理超时15分钟`, time: "2023-05-17 12:20" },
-  ]
+// const AbnormalOrderDetails = ({ employee }: { employee: string }) => {
+//   const abnormalOrders = [
+//     { id: 1, type: "超时", description: `${employee}：客房清洁超时30分钟`, time: "2023-05-15 10:30" },
+//     { id: 2, type: "未完成", description: `${employee}：健身房设备维护未完成`, time: "2023-05-16 14:45" },
+//     { id: 3, type: "超时", description: `${employee}：餐厅订单处理超时15分钟`, time: "2023-05-17 12:20" },
+//   ]
 
-  if (!abnormalOrders || abnormalOrders.length === 0) {
-    return <div>No abnormal orders found for this employee.</div>
-  }
+//   if (!abnormalOrders || abnormalOrders.length === 0) {
+//     return <div>No abnormal orders found for this employee.</div>
+//   }
 
-  return (
-    <Table>
-      <TableHeader>
-        <TableRow>
-          <TableHead>异常类型</TableHead>
-          <TableHead>描述</TableHead>
-          <TableHead>时间</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {abnormalOrders.map((order) => (
-          <TableRow key={order.id}>
-            <TableCell>{order.type}</TableCell>
-            <TableCell>{order.description}</TableCell>
-            <TableCell>{order.time}</TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  )
-}
+//   return (
+//     <Table>
+//       <TableHeader>
+//         <TableRow>
+//           <TableHead>异常类型</TableHead>
+//           <TableHead>描述</TableHead>
+//           <TableHead>时间</TableHead>
+//         </TableRow>
+//       </TableHeader>
+//       <TableBody>
+//         {abnormalOrders.map((order) => (
+//           <TableRow key={order.id}>
+//             <TableCell>{order.type}</TableCell>
+//             <TableCell>{order.description}</TableCell>
+//             <TableCell>{order.time}</TableCell>
+//           </TableRow>
+//         ))}
+//       </TableBody>
+//     </Table>
+//   )
+// }
 
 export function EmployeePerformance() {
-  const [selectedEmployee, setSelectedEmployee] = useState(null)
+  // const [selectedEmployee, setSelectedEmployee] = useState(null)
 
   return (
     <Card className="w-full">
